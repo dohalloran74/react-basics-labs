@@ -1,3 +1,3 @@
 # react-basics-labs
 
-web app labs practicals
+web app labs practicals - REACT PRACTICALS
