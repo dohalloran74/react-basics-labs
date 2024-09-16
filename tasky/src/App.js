@@ -1,33 +1,36 @@
+import React, { useState } from 'react';
 import './App.css';
 import Task from './components/Task';
 
 
 function App() {
-    return ( 
-        <div className = "container" >
-        <h1> Tasky </h1> 
-        <Task title="Dishes" deadline="Today" description="Empty Dishwaser"/>
-        
-        <Task title = "Laundry" deadline = "Tomorrow" description="Fold laundry and put away" />
-       {/*</div> fold laundry and put away  </Task>*/}
-        <Task title = "Tidy" deadline = "Today" />
-        </div>
-    );
+    const [ taskState, setTaskState ] = useState({
+        tasks: [
+          { id:1,title:"Dishes", description: "Empty dishwasher", deadline: "Today" },
+          { id:2, title: "Laundry", description: "Fold clothes and put away", deadline: "Tomorrow" },
+          {id:3 , title: "Tidy up", deadline: "Today" },
+          {id:4 , title: "shopping", description:"dont forget milk",deadline: "Today" },
+          {id:5 , title: "Homework", deadline: "Today" }
+        ]
+      });
+
+
+    return (
+    <div className="container">
+      <h1>Tasky</h1>
+      {taskState.tasks.map((task) => (              
+    <Task 
+      title={task.title}
+      description={task.description}
+      deadline={task.deadline}
+      key={task.id}
+    />
+  ))} 
+    </div>
+  );
 }
 
-/* This is a comment in React - working code
-function App() {
-    return ( 
-        <div className = "container" >
-        <h1> Tasky </h1> 
-        <Task title="Dishes" deadline="Today" />
-        <Task title = "Laundry" deadline = "Tomorrow" >
-        fold laundry and put away  </Task>
-        <Task title = "Tidy" deadline = "Today" />
-        </div>
-    );
-}
-*/
+
 
 
 export default App;
