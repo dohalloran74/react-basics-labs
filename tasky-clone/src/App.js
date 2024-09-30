@@ -1,4 +1,5 @@
 import "./App.css";
+<<<<<<< HEAD
 import Task from "./components/Task";
 
 function App() {
@@ -19,6 +20,19 @@ function App() {
         <
         /div>
     );
+=======
+import Task from './components/Task';
+
+function App() {
+  return (
+    <div className="container">
+      <h1> Tasky</h1>
+      <Task title="Dishes" deadline="Today" description="Wash and dry" />
+      <Task title="Laundry" deadline="Tomorrow" description="fold laundry and put away" />
+      <Task title="Tidy" deadline="Today"  description="everything in its box"/>
+    </div>
+  );
+>>>>>>> 67364d56008aa4a578b4d073bcbe4875242cbfa2
 }
 
 /* This is a comment in React - working code
