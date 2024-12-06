@@ -53,14 +53,13 @@ const [ formState, setFormState ] = useState({
     tasks.push(newTask);
     setTaskState({tasks});
   }
-  
   const doneHandler = (taskIndex) => {
     const tasks = [...taskState.tasks];
     tasks[taskIndex].done = !tasks[taskIndex].done;
   updateTask(tasks[taskIndex]);
   setTaskState({tasks});
   }
-  
+
   const deleteHandler = (taskIndex) => {
     const tasks = [...taskState.tasks];
     const id=tasks[taskIndex]._id;
@@ -68,6 +67,7 @@ const [ formState, setFormState ] = useState({
     deleteTask(id);
     setTaskState({tasks});
     }
+    
   
   return (
     <div className="container">
@@ -78,7 +78,7 @@ const [ formState, setFormState ] = useState({
           description={task.description}
           deadline={task.deadline}
           priority={task.priority}
-          key={task.id}
+          key={task._id}
           done={task.done}
           markDone={() => doneHandler(index)}
           deleteTask = {() => deleteHandler(index)}
